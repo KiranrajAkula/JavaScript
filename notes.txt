@@ -243,4 +243,8 @@ syntax:-
                 //business logics
         }
          variable_name(param1,parameter2,parameter3,....parameter n)
+
+Git URL:
+
+git remote add origin https://github.com/KiranrajAkula/JavaScript.git
    
