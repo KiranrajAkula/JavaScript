@@ -1,0 +1,49 @@
+<!-- <script>
+    let fun_one = ()=>{  // Arrow functon definition
+        return "Hello"
+    }
+    console.log(fun_one)   // def //function definition 
+    console.log(fun_one())  //Hello // funciton calling
+</script> -->
+
+<!-- <script>
+    let fun_one=() => console.log("Hello")
+    fun_one() // Hello
+</script> -->
+
+<!-- <script>
+    let fun_one = (arg1,arg2,arg3) =>{
+        console.log(arg1,arg2,arg3)
+    }
+    fun_one("Hello_1","Hello_2","Hello_3")  //Hello_1 Hello_2 Hello_3
+    fun_one() // undefined undefined undefined
+    fun_one(null, null, null)  // null null null
+</script> -->
+
+<!-- <script>
+    let fun_one = (arg1,arg2,arg3) =>{
+        console.log(arg1(),arg2(),arg3())  //Hello_1 Hello_2 Hello_3 
+    }
+    fun_one( ()=>{
+        return "Hello_1" // this functon codes stored at arg1,arg2 and arg3 so that arg1,arg2,arg3 becomes fucitons to execute
+    }, ()=>{
+         return "Hello_2"
+    }, ()=>{
+        return "Hello_3 "
+    } ) // first arrow funciton is stored into arg1, second arrow funton is stored into arg2 and last one into arg3
+</script> -->
+
+
+<script>
+    let initialize = ( user,getElementsByEmail,getElementsById)=>{
+        console.log(user , getElementsByEmail() , getElementsById()) // Hello_1 //Hello_1 kiranrajakula@gamil.com kiranraj
+    };
+    let getElementsByEmail =() =>{   //  In this Variable holds the anoynomous function 
+        return "kiranrajakula@gamil.com"
+    };
+    let getElementsById = () =>{
+        return "kiranraj"
+    };
+
+    initialize("Hello_1", getElementsByEmail, getElementsById)
+</script>

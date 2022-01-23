@@ -1,0 +1,246 @@
+1)variables
+2)functions
+3)Arrays//important for interviews
+4)Json//important for interviews
+5)Promises
+6)DOM manipulations//important for interviews
+7)CallBacks//important for interviews
+8) Event Handlings
+9)Event Bubblings & event capturing
+10)Deboucing
+11)Throttling
+12)AJAX calls
+13)Regular Expressions
+14)
+
+
+Introduciton
+************
+=> java script is the scripting language
+    types of languages 1)Scripting lang 2) Programming lang 3) Markup languages 
+=> which is released by Netscape company
+=> Current vesrion is ES13 
+=> ES stands for ECMA script
+=> which files are saved with .js extention
+=> <Scipt> tag is used to declare the javascript to webpages
+  ex :- <html>
+            <head>
+            <script> </script>
+            <head>
+        <html>
+=> Js is used to develop the 1) Angular 2)React 3) Node 4) Vuejs 5) Static web pages to Dynamic web pages
+=> js is executed in two ways 1) By Node tools  Nodejs 2) interpreter present into Browser 
+=> synchronous execution: line by line excution is called synchronous excution
+=>javascript is the object based Scripting Language
+       1) window
+       2)document
+       3)console
+       4)Date
+       .....
+       .....
+Software Installations:
+***********************
+1) Download and install NodeJs
+
+2)Download and install the Visual Studio Code
+
+Execution of javascript:
+************************
+ex:-
+        demo.js
+                > node demo.js
+=> == will compare only value left side value with right side value
+=> but === will compare value and data type also 
+Variables:-
+***********
+=>variables are used to store the data
+=> string ,number, boolean, object, undefined,null,bigint,Symbol....
+=> we can declare the variables by using "var" , "let" , and "const"
+=>"let" and "const" keywords introduced in ES6
+=> variables should contain a-z,A-Z, 0-9, $,_
+=> variables should not start with digits
+    syntax:-
+            var/let/const variable_name = value;
+
+Nnumbers:-
+**********
+1)decimal    2) float (or) double    3) hexadecimal   4) octal  5)binary
+
+=>hexadecimal number will prefix with "0x"
+=>octal number will prefix with "0o"
+=>binary number will prefix with "0b"
+
+boolean:-
+*********
+true or false // true = 1, false = 0
+
+stirng:-
+********
+=> collection of characters called as  string
+=> we can represent the string in some ways they are ' '," " ,` ` (backtick)
+=> ` `(backtick) operator is introduced in ES6
+=> ` ` operator called  as template literals
+=> ` ` is used to define the paragraphs
+
+undefined:-
+***********
+ex:- person is there but no use (work) is called undefined- undefined  (wipro employee bench fresher for 1 month no project)
+=> have a mobile but no working is called undefined
+=> object is there but no use with that nd also it occupies the memory((Browser memory)
+
+Null:-
+******
+=> person is not there is called "null"
+=> object is not there also it does not occupies any memory   
+
+bigint:-
+=> if we need to store large amount of number bigint will be used
+=> which is suffixed with "n"
+=> range 2^53 - 1
+
+public Modifier:-
+*****************
+=> anybody can access but we dont have in javascript this concept
+
+symbol datatype:-
+*****************
+=> inorder to protect the data we used symbol datatype 
+ ex:-
+   var data3 = symbol(100);
+   console.log(data3) // symbol(100) but it is not correct 
+console.log(typeof data3) // symbol 
+
+typeof operator:-
+*****************
+=> is used to know the datatype
+=> typeof 100 // number
+=> typeof "hello" // string 
+=> typeof true // boolean
+=> typeof array // obj 
+=> typeof null // obj
+=> typeof undefined // undefined
+=> typeof bigint  // bigint
+=> typeof symbol // symbol
+
+forloop:-
+*********
+=>looping is nothing but rotation is called iterations
+for (var i=0(initialization);i<5(condition);i++(incrementing)){
+
+}
+
+variables:-
+***********
+=>var keyword allows the duplicate variables
+=> let keyword wont allows the duplicate variables
+
+
+block:-
+*******
+=> which represented with curly braces is called block to defiine the code
+
+var data = 100 // global variable
+ 
+{
+ var data = 100 // local variable
+}
+
+
+variable declaration  = variable initialization  // variable accsessing
+
+var                                                                     let
+*****************                                                         *****************
+=>var keyword introduced in ES1                     =>let keyword introduced in ES6
+=> duplicate members allowed                        => duplicate members wont allowed
+=> global polluting issue raised                    => we can overcome
+=> variables hoisting raised                        => we can overcome
+
+const keyword:-
+***************
+=> value cannot be modified that means we cannot overrided that type of things is called const 
+ex:- while using the const we can modify the arr but not possible to create the duplicate const variabled like 1 acre cannot modified into 1 nd half but we can modifies the rooms 
+     const data3 = 200;
+     data3 = 200;// Type error
+
+=>  const arr = [1,2,3,4,5] //arr is land and values are rooms
+        arr= [];// Type Error
+
+        arr[0] = 100;
+        arr[3] = 400;
+        arr[5] = 800;
+
+        console.log(arr);
+
+
+json object:
+************
+=> open the curly braces nd closing the curly braces is called json object
+        ex:-   const obj = {"key" : "value"},"key" : "value"; // representation of json object 
+
+
+functions():-
+*************
+=> particular bussiness logic called as funciton
+=> funcitons are used to reuse the bussiness logic 
+=> we will define the funcitons with "function" keyword
+=> we have following funcitions
+   1) Named functions
+   2) Anonymous funcitons / Arrow functions / CallBack funcitions / Fat Arrow funcitions / Name less funcitions
+   3) Rest parameters in funcitions
+   4) default parameters in funcitions 
+   5) optional parameters
+   6) Generators
+   7) IIFE  (immediate invokable funcitional Expressions)
+   8) constructor funcitions 
+
+   1)Named Functions:-
+   *******************
+   => the function with the name called as Named function
+   => Function syntax devided into two parts 
+    Syn:-
+                function function_name(arg1, arg2, arg3....argn){
+                                bussiness logic
+                }
+                function_name(parameter1,parameter2,.....parameter n);
+=> function defenition :-
+**************************
+function function_name(arg1,arg2,.....argn{
+        bussiness logic
+})
+=> function Calling:-
+***************************
+function_name(parameter1 ,parameter2,parameter3...parameter N);  
+
+Rest parameters:-
+*****************
+=> it is used to store morethan one value in single argument
+=> "..." called as spread operator
+=> it is introduced in ES6
+=>  we can have only "one" rest parameter per funciton
+=> the occrence of rest parameter "should be last"
+=> the default value of the  spread operator is empty array []
+
+Default Parameters:-
+********************
+=> while  defining the funcitons, we will assign some default values to parameters.
+=> this concept is introduced in ES6
+
+Arrows Functon:-
+****************
+=>The funcition without name called Anonymous funciton.
+=> Anonymous funciton also called as Arrow funciton.
+=> Arrow funcitons behaves like call back function.
+=> we will represent arrow functions with "=>" symbol.
+=> Arrow funtion is introduced in ES6.
+
+syntax:-
+********
+1) funtion definition
+2) funtion Calling
+=> let is the suggestable keyword
+
+        let variable_name= (arg1,arg2,arg3)=>{
+                //business logics
+        }
+         variable_name(param1,parameter2,parameter3,....parameter n)
+   

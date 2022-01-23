@@ -1,0 +1,170 @@
+<!-- <script>
+    function fun_one(){
+        return "well come to Javascript"; // 2,3,4 lines are called fun definition
+    }
+    consolel.log(fun_one()) // function calling  // welcome to javascript
+</script> -->
+
+<!-- <script>
+    function fun_one(){
+        return "hello";
+    }
+
+    console.log(fun_one) // if we forgot to keep half() then it will return whole funtion definition
+</script> -->
+
+<!-- <script>
+    function fun_one(arg1, arg2,arg3){   // function with argument
+        console.log(arg1,arg2, arg3);
+    };
+    fun_one("Angular", "NodeJs", "MangoDB");  // Angular NodeJs MangoDB
+    fun_one("Reactjs", "NodeJs", "MangoDB");    //ReactJs NodeJs MangoDB
+    fun_one("Vuejs", "NodeJs", "MangoDB");      //Vuejs NodeJs MangoDB
+    fun_one()  //undefined undefined undefined
+    fun_one(null, null, null) //null null null 
+    fun_one(undefined,undefined,"Java");   //undefined undefined 'Java'
+</script> -->
+
+<!-- <script>
+    function fun_one(){
+        return fun_two;
+    }
+     function fun_two(){
+         return "Hello"
+     }
+     console.log(fun_one) // fun_one() definition we will get y bcz here we missed the parenthesis
+
+     console.log(fun_one()())// we got fun_two() def y bcz fun_one() is printing the value of the fun_two()
+                                // here in order to get the output of Hello we need to place one more parenthesis
+</script> -->
+
+<!-- <script>
+    let arr = [];
+
+    function fun_one(){
+        return "kiran"
+    }
+    for(let i=0 ;i<5;i++){
+        arr.push(fun_one());
+    } 
+    for(let j=0;j<arr.length;j++){
+      console.log( arr[j])
+    }
+</script> -->
+
+<!-- <script>
+    let arr = []
+     function fun_one(){
+         return "Kiran";
+     }
+     for(let i=0;i<5;i++){
+         arr.push(fun_one)
+     }
+     console.log(arr[0]())  // inorder to get the value of fun_one() we need to add parenthesis
+     for(let j=0 ;j<arr.length ;j++){
+        console.log(arr[j]())
+     }
+     console.log(arr)
+</script> -->
+
+<!-- <script>
+    function fun_one(){
+        return "hello";
+    }
+    setTimeout(function(){ // Nameless function and 5000sec are the two arguments of the setTumeout() method i.e delay the output
+       console.log( fun_one())
+    },5000)
+</script> -->
+
+<!-- <script>
+    function fun_one(){
+        return "hello";
+    }
+    setInterval(() => {
+        console.log(fun_one())
+    }, 2000);
+</script> -->
+
+<!-- <script>
+    for(var i=0;i<5;i++){
+        setTimeout(() => {
+            console.log(i)
+        }, 5000);
+    }
+    // if i take the var key anser is 5 5 5 5 5 // var keyw wont have the capable to remember (store) the old values so it gives final result by neglection old values  
+    //to overcome the above problem let will be used if i take the let key  anser is 01234
+</script> -->
+
+<!-- //Rest parameters in  Functions 
+// if we want to store the morethan one parameters with crossing the limits then we need to go for Rest parameters it implemented by placing the "...(spread operator)" it stores the all values into current argument
+// which is introduced at ES6 version -->
+<!-- <script>
+    function fun_one(...arg1){  //multiple parameters are stored into arg1  which is behaves like an array object 
+console.log(arg1)
+    } 
+    fun_one("hello","hello1") //['hello', 'hello1']
+    fun_one("hello1","hello2","hello3")  //['hello1', 'hello2', 'hello3']
+    fun_one() // it takes defaultly like an empty array i.e []
+    fun_one(undefined)  //[undefined]
+    fun_one(undefined , null) //[undefined, null]
+</script> -->
+
+<!-- <script>
+    function fun_one(...arg1){  // it can hold morethan one value // we can take only one spread operator of arg for per function()
+        
+
+    }
+     function fun_two(...arg1,...arg2){//Uncaught SyntaxError: Rest parameter must be last formal parameter
+
+    }
+</script> -->
+
+<!-- <script>
+    function fun_one(arg1,...arg2){  // position of the spread operator always should be last in occrences
+            console.log(arg1,arg2);
+    }
+    fun_one(); //undefined []
+    fun_one(undefined);  //undefined []
+    fun_one("hello");  //hello []
+    fun_one("hello1","hello2"); //hello1 ['hello2']
+    fun_one("hello1", "hello2", "hello3"); //hello1 (2) ['hello2', 'hello3']
+    fun_one(undefined, undefined);  //undefined [undefined]
+    fun_one(null, null); //null [null]
+</script> -->
+
+<!-- // default parameters -->
+
+<!-- <script>
+    function fun_one(arg1 = "hello1", arg2 ="hello2",arg3 = "hello3"){
+console.log(arg1, arg2, arg3);
+    }
+    fun_one();  //hello1 hello2 hello3
+    fun_one("reactJs")  //reactJs hello2 hello3
+    fun_one(undefined,undefined,undefined); // even if we supply the undefined it wont effect the having the arguments i.e hello1 hello2 hello3
+    fun_one(null, null, null); //null null null// null values are effects the having defaults values 
+    fun_one(undefined, undefined, "hello") //hello1 hello2 hello
+</script> -->
+
+<!-- <script>
+    function fun_one(arg1 , arg2 = "Hello"){
+        console.log(arg1,arg2)
+    }
+    fun_one()     //undefined 'Hello'
+    fun_one(undefined)  //undefined 'Hello'
+    fun_one("Hello")   // 'Hello' 'Hello'
+    fun_one("null")  //null Hello
+    fun_one(undefined , undefined)  //
+    fun_one(undefined , undefined)  //undefined 'Hello'
+    fun_one(null, null)  // null null
+</script> -->
+
+<script>
+    function fun_one(arg1, arg2 = "Hello", ...arg3){
+        console.log(arg1, arg2, arg3);   
+        
+    }
+    fun_one();  //undefined 'Hello' []
+    fun_one(undefined, undefined, undefined)  //undefined 'Hello' [undefined]
+    fun_one(null, null, null)  // null null [null]
+    fun_one("Hello",undefined,"Hello3") //Hello Hello ['Hello3'] 
+</script>
