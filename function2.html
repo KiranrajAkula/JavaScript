@@ -1,0 +1,35 @@
+<!-- <script>
+    let arr = [];
+    for(let i=0 ; i<5 ; i++){
+        arr.push(()=>{ return "Hello"})
+    }
+    for(let j=0 ; j<5 ; j++){
+        console.log(arr[j]()); // because of parenthesis(arr[j]()) the Hello output will be produced if not it will return the function definition with arr[j]
+    }
+</script> -->
+
+<!-- <script>
+     function  fun_one(arg1, arg2, arg3) {
+         console.log(arg1,arg2, arg3)
+     }
+     fun_one((()=>{ return "Hello_1"})(),
+            (()=>{return "Hello_2"})(),
+            (()=>{ return "Hello_3"})()) // Hello_1 Hello_2 Hello_3
+</script> -->
+
+<!-- <script>
+    ((arg1,arg2,arg3)=>{
+        console.log(arg1,arg2,arg3)
+    })("Hello_1","Hello_2","Hello_3") //Hello_1 Hello_2 Hello_3
+</script> -->
+
+<!-- <script>
+    for(var i=0;i<5;i++){
+        ((i)=>{
+        setTimeout(()=>{ // setTimeout(arg1(callback fun),arg2(timestamp 5000 5sec)) the funtion will be executed at time will happend no need to call that one is called callBack Fuction
+            console.log(i)
+        },5000)
+    })(i)
+    }
+    
+</script> -->

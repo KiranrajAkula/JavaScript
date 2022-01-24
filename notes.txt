@@ -247,4 +247,44 @@ syntax:-
 Git URL:
 
 git remote add origin https://github.com/KiranrajAkula/JavaScript.git
-   
+
+IIFE:-
+******
+=> stands for Immediate Invokable Functional Expression
+=> which is introduced into ES9
+=> these funciton called as self invokable funcitons
+=> in general we have funcition definition and funcition calling but comes to IIFE here no need function calling only 
+    function definition is require with this it will produce an output
+
+syntax:-
+********
+        ((arg1,arg2,arg3....arg n)=>{
+                business logic
+        })(parameter1,parameter2,parameter3....parameters n)
+
+Constructor Functions:-
+***********************
+=> class: collection of variables and methods(functions) is class //java ,c++,php ,.net oop's concepts 
+=> java simle code:-
+        class ClassA{
+                studen s = "Kiran";
+                public Method(){
+                        return this.s;
+                }
+        }
+         ClassA a = new Clas()
+         a.Method();
+=> constructor funcitons used to create the classes  like structures before ES6.
+=> in constructor functions (funcitions and variables) should start with this keyword.
+=> this keyword representating the current class member.
+=> we will create the object with the help of new keyword.
+
+Prototype:- imp
+***********
+=> obj1 means class obj. i.e let obj1 = new class_one()
+=> prototype means current class. i.e class_one.prototype // it is used to extend the current class for further
+
+Prototype Chaining(Inheritence):-
+*********************************
+=> linking one class to another class we can call Prototype Chaining
+=> Aquiring the properties of parent to the child we can call Inhritence in this we call prototype chaining 

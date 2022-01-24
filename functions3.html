@@ -1,0 +1,118 @@
+<!-- <script>
+    function  class_one() {
+        this.sub_one = "angular13";  // creating the variables with this keyword
+        this.sub_two =" nodeJs";
+        this.sub_three = " MangoDB";  
+    }; 
+    let obj1 = new class_one();   // creating the object to the class_one //in browser one object will be created the reference name is obj1
+                                    // in that reference object the created varibles will stored i.e sub_one,sub_two, sub_three
+    console.log(                    // This obj1 representing the class_one
+        obj1.sub_one,  // here we accesing that stored variables with reference object obj1
+        obj1.sub_two,
+        obj1.sub_three  
+    );  //angular13  nodeJs  MangoDB
+
+    // here we can create n number of refrence objects 
+    let obj2 = new class_one();
+    console.log(
+        obj2.sub_one,
+        obj2.sub_two,
+        obj2.sub_three //  angular13  nodeJs  MangoDB
+    );
+</script> -->
+
+<!-- <script>
+    function class_one() {
+        this.wish = "Hello";
+        this.my_fun = function(){
+            return `${this.wish} Kiran raj `
+        };
+    };
+    let obj1 = new class_one();
+    console.log(
+        obj1.wish,
+        obj1.my_fun()
+    );  //Hello Hello Kiran raj
+</script> -->
+
+<!-- <script>
+    function class_one() {
+        this.var_one ="Hello_1";
+        this.var_two = "Hello_2";
+        this.var_three = "Hello_3";
+        this.fun_one = function(){
+            return this.var_one;
+        };
+        this.fun_two = function(){
+            return this.var_two;
+        };
+        this.fun_three = function() {
+            return this.var_three;   
+        }
+    }
+     let obj1 = new class_one();
+     console.log(obj1.fun_one(),
+                 obj1.fun_two(),
+                 obj1.fun_three()     //Hello_1 Hello_2 Hello_3        
+    )
+</script> -->
+
+<!-- <script>
+    function class_one(arg1,arg2,arg3){   // these parameters called Dynamic parameter
+        this.var_one = arg1;
+        this.var_two = arg2;
+        this.var_three = arg3;
+    };
+    let obj1 = new class_one("Hello_1","Hello_2","Hello_3");
+    console.log(
+    obj1.var_one,
+    obj1.var_two,
+    obj1.var_three //Hello_1 Hello_2 Hello_3
+    );  
+
+    let obj2 = new class_one("Java","JavaScript","MangoDB");
+    console.log(
+        obj2.var_one,
+        obj2.var_two,
+        obj2.var_three  //Java JavaScript MangoDB
+    )
+</script> --> 
+
+<!-- <script>
+    function class_one() {
+        
+    };
+    class_one.prototype.var_one = "Hello Kiran";
+    let obj1 = new class_one();
+    console.log(obj1.var_one)   // Hello Kiran
+</script> -->
+
+<!-- <script>
+    function  class_one() {
+        
+    };
+    class_one.prototype.sub_one="JavaScript";
+    class_one.prototype.fun_one=function() {
+        return "Hello";
+    }
+    let obj1 = new class_one();
+    console.log(
+        obj1.sub_one,
+        obj1.fun_one()
+        );    //JavaScript Hello
+</script> -->
+
+<script>
+    function class_one(){
+        
+    };
+    class_one.prototype.var_one = "Hello"
+    function class_two(){
+
+    };
+    class_two.prototype = Object.create(class_one.prototype) // syn: childClass.prototype = Object(predefined object in this create function available).create(This create funciton will create relationship b/w child and parentClasses)(parentClass.prototype)
+
+    class_two.prototype.var_two = "kiran raj";
+    let obj1 = new class_two();
+    console.log(obj1.var_one,obj1.var_two) //Hello kiran raj
+</script>
