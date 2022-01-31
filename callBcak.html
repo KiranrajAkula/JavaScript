@@ -1,0 +1,175 @@
+<!-- <script>
+    function fun_one(arg1){
+        console.log(arg1) //it will print only fun_two defintion
+        console.log(arg1()) // but here we printing fun_two() output (return statements output)  // This is an fun_two definition
+    }
+    function fun_two(){
+        return "This is an fun_two definition"
+    }
+    fun_one(fun_two) // here we get definiton as a output
+</script> -->
+
+
+<!-- <script>
+    function fun_one(arg1, arg2, arg3) {
+        console.log(arg1(), arg2() ,arg3())  //Iam the fun_two   am the fun_three   am the fun_four  // if we keep parenthesis this output will be produced
+    }
+    fun_one(function fun_two() {
+        return " Iam the fun_two "
+    },
+        function fun_three() {
+            return " am the fun_three "
+        },
+        function fun_four() {
+            return " am the fun_four "
+        }
+    ) 
+</script> -->
+
+<!-- <script>
+    function fun_one(arg1) {
+        return arg1("am the fun_two() 's arg1 ")
+    };
+    fun_one(function fun_two(arg1) {
+        console.log(arg1)               //am the fun_two() 's arg1
+    });
+</script> -->
+
+
+<!-- <script>
+    function fun_one(arg1, arg2, arg3) {
+        return arg1("fun_two()'s arg1") + "....." + arg2("fun_three()'s arg1") + "......" + arg3("fun_four()'s arg1")
+    }
+    fun_one(function fun_two(arg1) {
+        console.log(arg1) // fun_two()'s arg1
+    }, function fun_three(arg1) {
+        console.log(arg1) // fun_three()'s arg1
+    }, function fun_four(arg1) {
+        console.log(arg1)  //fun_four()'s arg1
+    })
+</script> -->
+
+
+<!-- <script>
+    function fun_one(arg1){
+        return arg1( fun_three)  // fun_two def stored into arg1 and fun_three def stored into arg2 finally fun_three called by the fun_one()
+    }
+    function fun_two(arg2){   // here the cycle is 1 - 2 - 3 - 1
+        return arg2("am the fun_three()'s agr3 ")
+    }
+    function fun_three(arg3){   // here the arg3 = "am the fun_three()'s agr3" 
+        console.log(arg3)  //am the fun_three()'s agr3 
+    }
+    fun_one(fun_two)
+</script> -->
+
+<!--    <script>
+        function calc(num, add){
+            return add(num+5,false)
+        }
+        function addition(addRes,error ){
+            if(error == false){  //that means if the cond is true   
+                console.log(addRes)
+            }
+        }
+        calc(5, addition);
+        </script> 
+
+-->
+
+<!--    <script>
+        function fun_one(posRes,errRes) {
+            return posRes("Success")+">>>>>"+errRes("Error")
+        }
+        fun_one((param1)=>{
+            console.log(param1)
+        },
+        (param2)=>{
+            console.log(param2)
+        });
+        </script> 
+-->
+        <!-- <script>
+            let calc = (num,add)=>{
+                return add(num+5,false)
+            }
+            calc(5,(posRes,error)=>{
+                if(!error){
+                    console.log(posRes);
+                }
+            });
+        </script> 
+-->
+<!--    <script>
+            let calc = (num , add)=>{
+                return add(num+5,false)
+            }
+            let sub = (num,callback)=>{
+                return callback(num-3, false)
+            }
+            calc(5,(addRes,error)=>{
+                if(!error){
+                sub(addRes,(subRes,error)=>{
+                    if(!error){
+                        console.log(subRes)      // 7
+                    }
+                });
+                }
+            })
+        </script> 
+-->
+<!--    <script>
+            let calc = (num , add)=>{
+                return add(num+5,false)
+            }
+            let sub = (num,callback)=>{
+                return callback(num-3, false)
+            }
+            let mul = (num, callback)=>{
+                return callback(num*2,false)
+            }
+            calc(5,(addRes,error)=>{
+                if(!error){
+                sub(addRes,(subRes,error)=>{
+                    if(!error){
+                    mul(subRes,(mulRes,error)=>{
+                        if(!error){
+                            console.log(mulRes)   //14
+                        }
+                    });
+                    }
+                });
+                }
+            })
+        </script>  
+-->
+
+<script>
+    let calc = (num , add)=>{
+        return add(num+5,false)
+    }
+    let sub = (num,callback)=>{
+        return callback(num-3, false)
+    }
+    let mul = (num, callback)=>{
+        return callback(num*2,false)
+    }
+    let div = (num, callback)=>{
+        return callback(num/2+3,false)
+    }
+    calc(5,(addRes,error)=>{
+        if(!error){
+        sub(addRes,(subRes,error)=>{
+            if(!error){
+            mul(subRes,(mulRes,error)=>{
+                if(!error){
+                   div(mulRes,(divRes,error)=>{     //      this function is called hellback function
+                    console.log(divRes)             //10    this code is not recommonded to use in order to overcome(remedy) this 
+                   })                               //      Hell callback function we use promises concepts
+                }
+            });
+            }
+        });
+        }
+    })
+</script>

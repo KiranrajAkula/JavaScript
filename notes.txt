@@ -219,6 +219,7 @@ Rest parameters:-
 =>  we can have only "one" rest parameter per funciton
 => the occrence of rest parameter "should be last"
 => the default value of the  spread operator is empty array []
+=> In this sread operator stores the values in the form of array manner.
 
 Default Parameters:-
 ********************
@@ -253,7 +254,7 @@ IIFE:-
 => stands for Immediate Invokable Functional Expression
 => which is introduced into ES9
 => these funciton called as self invokable funcitons
-=> in general we have funcition definition and funcition calling but comes to IIFE here no need function calling only 
+=> in general we have funcition definition and funcition calling but come to IIFE here no need function calling only 
     function definition is require with this it will produce an output
 
 syntax:-
@@ -264,7 +265,7 @@ syntax:-
 
 Constructor Functions:-
 ***********************
-=> class: collection of variables and methods(functions) is class //java ,c++,php ,.net oop's concepts 
+=> class: collection of variables and methods(functions) is called as class //java ,c++,php ,.net oop's concepts 
 => java simle code:-
         class ClassA{
                 studen s = "Kiran";
@@ -288,3 +289,155 @@ Prototype Chaining(Inheritence):-
 *********************************
 => linking one class to another class we can call Prototype Chaining
 => Aquiring the properties of parent to the child we can call Inhritence in this we call prototype chaining 
+
+Generators:-
+************
+=> Generators controlls the "statements" in functions
+=> Generators should have "*"
+=> Each statement should have "yield" statement.
+=> Generators will return "cursors" mechanism.
+=> by using "cursors" we can controls statements. 
+
+=> dafault position of the cursor is above first record among some records 
+=>(iteration not completer) if we print the cursor line by line then wen need to go with the funciton that is like console(cursor.next());
+=> what is the meaning of the false means am not the last person one more person is there behind 
+   me if it is true that means that is the last stat and no other person available ofter that
+=> if any statement availabe after the return statement that never executed that is yield statement 
+   (done:true means no more iterations iteration completed)
+
+Optional Parameters:-
+*********************
+=> while calling the funcitons we will make "few" parameters are optional.
+=> this concept introduced in "ES6".
+=> Optional parameters we will represent With "?".
+=> optional parameter will work in "Typescript".
+=> "Superset" (Advanced) of "Javascript" called as "Typescript".
+=> we will save Typescript files with ".ts" extention.
+=> Typescript follows "OOP's features". (Typescript is equalent to core java).
+=> Typescript is a "Programming language".
+=> Browsers wont understand the Typescript.
+=> so, we need to convert Typescript to equalent Javascript
+=> conversion from Typescript to equalent JavaScript called as "Transpilation".
+
+Installation of Typescript:-
+****************************
+
+to Install typescript we need to install below command
+>npm install -g typescript
+        - npm stands for "node packaging manager".
+        - -g stands for "global Installation".
+
+Transpilation:-
+***************
+to do the Transpilation we need to follow some things
+>tsc demo.ts   // tsc stands for typescript compiler
+ofter compiling the demo.ts which is converted to demo.js as a Output
+o/p
+demo.js
+ofter that to run converted js file below cmd is used 
+>node demo.js
+
+
+
+CallBack Function :-
+********************
+=> Passing one function to another function is called CallBack Functon.
+  
+  Example:-
+        <script>
+    function fun_one(arg1){
+        console.log(arg1) //it will print only fun_two defintion
+        console.log(arg1()) // but here we printing fun_two() output (return statements output)  // This is an fun_two definition
+    }
+    function fun_two(){
+        return "This is an fun_two definition"
+    }
+    fun_one(fun_two) // here we get definiton as a output
+</script>
+ 
+ => here in above Example fun_two() def stored into arg1 
+ => passing one function definiton another function as argument technically we can call CallBack function.
+
+
+ Example:-
+  <script>
+    function fun_one(arg1, arg2, arg3) {
+        console.log(arg1, arg2 ,arg3)
+    }
+    fun_one(function fun_two() {
+        return "Iam the fun_two"
+    },
+        function fun_three() {
+            return "am the fun_three"
+        },
+        function fun_four() {
+            return " am the fun_four"
+        }
+    ) 
+</script>
+
+O/P  
+****    this is an output for above prog
+                ƒ fun_two() {
+        return "Iam the fun_two"
+    } ƒ fun_three() {
+            return "am the fun_three"
+        } ƒ fun_four() {
+            return " am the fun_four"
+        }
+
+
+Arrays:-
+*******
+=> array - collection of "indexed" elements called as "array"
+=> index start from "0"
+=> we will represent the array by using []
+
+length:
+=> to find the length of array it is used.
+ex:-
+    arr = [1,2,3,4,5,6]
+    console.log(arr.length)// 6
+
+
+push():- this operation is used to add the new element into the array at the ending
+
+pop();- this operation is used to remove the element from the array at or from the ending
+
+unshift():-  this operation is used to add the new element into the array at the begining
+
+shift():- this operation is used to remove the new element from the array at or from the begining
+
+splice():-  this is used to delete the element at any place from the array 
+    eX:-
+        arr1.splice(1,2)   var_name.splice(Index position , No of elements to delete)  
+            here arr1, is the variable name,
+            1, is the position of the element,
+            2, is the required no of elements to delete
+    let arr1 = [10,20,30,40,50,60,70,80,90,100];
+
+    arr1.splice(1,2)   
+    console.log(arr1)                          //  [10, 40, 50,  60, 70, 80, 90, 100] 
+                                            //  here we printing rest of the elements after the deleting the elements from the array
+
+
+map():-
+=> if we want to manipulate each and every element in the array here we have one function that is map() function.
+
+syntax:-
+  [arr].map(arrowfunction_arg);
+
+  ex:-
+        console.log(
+    [1,2,3,4,5].map((elements,index)=>{
+
+    })
+);
+Here in array each element(1,2,3,4,5) stored in elements and all the indexes(0,1,2,3,4) are stored into index
+
+
+
+filter():-
+**********
+=> inorder to apply the conditions here we need to use the filter function.
+
