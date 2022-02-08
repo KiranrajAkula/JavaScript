@@ -1,0 +1,538 @@
+<!-- 
+    <script>
+    let obj = {
+        "sub_one":"ReactJs",
+        "sub_two":"NodeJs",
+        "sub_three":"AngularJs"
+    };
+    console.log(obj.sub_one,obj.sub_two, obj.sub_three)         //ReactJs NodeJs AngularJs
+    </script>
+ -->
+
+<!-- 
+        <script>
+        let obj = {
+            "obj1":{"key1":"value1"},
+            "obj2":{"key2":"value2"},
+            "obj3":{"key3":"value3"}
+        }
+
+        console.log(obj.obj1.key1)  //value1
+        console.log(obj.obj2.key2)  //value2
+        console.log(obj.obj3.key3)  //value3
+    </script> 
+-->
+
+<!-- 
+    <script>
+    let obj = {
+        "key1":"Hello_1",
+        "key2":"Hello_2",
+        "key3":"Hello_3"
+    }
+    for(let k in obj){
+        console.log(k)              // key1 ,key2 ,key3
+        console.log(obj[k])         //Hello_1, Hello_2, Hello_3
+        console.log(typeof k)       //string , string, string
+    }
+    </script> 
+-->
+<!-- 
+    <script>
+        let obj = {                                             // here outer json object contain inner json object
+            "obj1":{
+                "sub_one":"json",
+                "sub_two":"reactJS",
+                "sub_three":"deno"
+            }
+        }
+        //for...in loop
+        //ES6
+        for(let key in obj.obj1){
+            console.log(obj.obj1[key])        // json reactJS deno
+        }
+    </script> 
+-->
+
+<!-- 
+    <script>
+    function dbFun(){
+        return "Hello"
+    }
+    console.log(dbFun()); //Hello
+    </script>
+ -->
+
+<!--    
+        <script>
+        let db = {
+            "oracle": oracle,
+            "mysql": mysql,
+            "mangoDb":mangoDb,
+            "cassandra": cassandra()
+        }
+        function oracle(){
+            return "Oracle Connection soon..."
+        }
+        function mysql(){
+            return "My sql Connection Soon..."
+        }
+        function mangoDb(){
+            return "MangoDb Connection Soon..."
+        }
+        function cassandra(){
+            return "CassandraDb Connction Soon..."
+        }
+
+        console.log(db.cassandra, db.mangoDb(), db.mysql(), db.oracle())       //CassandraDb Connction Soon... MangoDb Connection Soon... My sql Connection Soon... Oracle Connection soon...
+    </script> 
+-->
+<!-- 
+    <script>
+        let obj = {
+            "key1": ()=>{return "Value1"},
+            "key2": ()=>{return "value2"},
+            "key3": ()=>{return "value3"},
+        }
+        console.log(obj.key1(),obj.key2(),obj.key3())   //Value1 value2 value3
+    </script> 
+-->
+<!--    
+   <script>
+        let obj = {
+            "key1" : "value_1",
+            "key2" : "value_2",
+            "key3" : "value_3",
+
+        }
+        console.log(
+            Object.keys(obj)        // ['key1', 'key2', 'key3']
+           )
+        console.log(
+            Object.values(obj)          //['value_1', 'value_2', 'value_3']
+        )
+    </script> 
+ -->
+<!-- 
+    <script>
+        let original = {
+            "key1":"value_1"
+        }
+        let xerox = { ...original}         // deep copy
+
+        original.key1 = "Original Copy";
+        xerox.key1 = "Xerox Copy";
+
+        console.log(original)      //{key1: 'Original Copy'}
+        console.log(xerox)         //{key1: 'Xerox Copy'}
+    </script> 
+-->
+<!-- 
+    <script>
+        let obj1 = {
+            "key1":"value_1",
+            "key2":"value_2",
+            "key3":"value_3"
+        }
+
+        console.log(obj1)       //{key1: 'value_1', key2: 'value_2', key3: 'value_3'}
+        delete obj1.key1;
+        console.log(obj1)       //{key2: 'value_2', key3: 'value_3'}  here the key3 is deleted
+    </script>
+ -->
+<!--  
+    <script>
+        let obj1 = {"key1": "value1"}
+        let obj2 = {"key2": "value2"}
+        let obj3 = {"key3": "value3"}
+        let obj4 = {...obj1,...obj2,...obj3}
+
+        console.log(obj4)      //{key1: 'value1', key2: 'value2', key3: 'value3'}  Concatenation with sperad operator
+    </script>
+ -->
+<!--  
+    <script>
+        let obj1 = {}; // initially it is empty json object
+        obj1.key1 = "Hello_1";  // adding the data into a object dynamically
+        obj1.key2 = "hello_2";
+        obj1.key3 = "hello_3";
+        
+        console.log(obj1)       //{key1: 'Hello_1', key2: 'hello_2', key3: 'hello_3'}   here the added dynamic data
+    </script> 
+-->
+<!-- 
+    <script>
+        let obj = {
+            "key1":"Hello_1",
+            "key2":"Hello_2",
+            "key3":"Hello_3"
+        }
+        obj.key1 = "Value_1",       // deleting previous data i.e updating the data
+        obj.key2 = "Value_2",
+        obj.key3 = "Value_3"
+
+        console.log(obj)            //{key1: 'Value_1', key2: 'Value_2', key3: 'Value_3'}
+    </script>
+ -->
+    
+<!-- 
+    <script>
+        let obj = {
+            "key1": "Hello_1",
+            "key2": "Hello_2",
+            "key3": "Hello_3"
+        }
+        Object.freeze(obj)
+
+        //read
+        console.log(obj)       // {key1: 'Hello_1', key2: 'Hello_2', key3: 'Hello_3'}
+        // add
+        obj.key4 = "Hello_4"
+        console.log(obj)        //{key1: 'Hello_1', key2: 'Hello_2', key3: 'Hello_3'} here not added y  bcz it is in the state of freeze state.
+
+        // update
+        obj.key1 = "Well come"  //{key1: 'Hello_1', key2: 'Hello_2', key3: 'Hello_3'} here not updated y bcz it is in the state of freeze state
+        console.log(obj)
+
+        //delete
+        delete obj.key1 ;
+        console.log(obj)        //{key1: 'Hello_1', key2: 'Hello_2', key3: 'Hello_3'} here not deleted y bcz it is in the state of the freeze state
+    </script> 
+-->
+<!-- 
+    <script>
+        let obj = {
+            "key1":"Hello_1",
+            "key2":"Hello_2",
+            "key3":"Hello_3"
+        }
+        Object.seal(obj)
+
+
+        // read
+        console.log(obj)        //{key1: 'Hello_1', key2: 'Hello_2', key3: 'Hello_3'}   // read the data happend
+
+        // add
+        obj.key4 = "Hello_4"
+        console.log(obj)        //{key1: 'Hello_1', key2: 'Hello_2', key3: 'Hello_3'} // addition not happned
+        
+        //updation
+        obj.key1 = "Wel come";
+        console.log(obj)        //{key1: 'Hello_1', key2: 'Hello_2', key3: 'Hello_3'} // updation happend
+
+        //delete
+
+        delete obj.key1;
+        console.log(obj)        //{key1: 'Hello_1', key2: 'Hello_2', key3: 'Hello_3'} // deletion no happend
+    </script>
+     -->
+<!--  
+        <script>
+                            // adding the key2 by using Object.defineProperty()
+            let obj = {
+                "key1":"hello_1"
+            }
+            // add key2 ---- disable update and delete  
+
+            Object.defineProperty(obj,"key2",{value:"hello_2",writable: false});   //{key1: 'hello_1', key2: 'hello_2'} key2 will be added here writable:false(disabling the update operation) means we can't able change the key2 value
+
+            console.log(obj)
+            obj.key2 = "hello_3";          
+
+            console.log(obj)                //{key1: 'hello_1', key2: 'hello_2'} // value not changed bcz of writable:false
+
+            delete obj.key2;
+
+            console.log(obj)                //{key1: 'hello_1', key2: 'hello_2'}  // delete opearation also not applicable bcz of writable:false
+        </script> 
+-->
+
+<!-- 
+    <script>
+        let obj = {"key1":"hello_1"}
+
+        // add key2 ------ disable update and delete
+        // add key2 ------  enable update and delete
+
+        Object.defineProperty(obj,"key2",{value:"hello_2",writable:false});  
+
+
+        Object.defineProperty(obj,"key3",{value:"hello_3", writable:true});
+
+        console.log(obj)            //{key1: 'hello_1', key: 'hello_2', key3: 'hello_3'}
+
+        obj.key2 = "Welcome_2";
+        obj.key3 = "Welcome_3";
+
+        console.log(obj)            //{key1: 'hello_1', key2: 'hello_2', key3: 'Welcome_3'} // here key2 value not updated bcz of writable:false but key3 updated bcz of writable: true 
+
+
+        delete obj.key2;
+        delete obj.key3;
+
+        console.log(obj)       //{key1: 'hello_1', key2: 'hello_2', key3: 'Welcome_3'} // here nothing changes happend bcz we can able to read and update but we can't able to delete key values
+    </script> 
+-->
+<!-- 
+    <script>
+        let obj = {
+             "key1":"Hello_1",
+        };
+        Object.defineProperties(obj,{"key2":{"value":"Hello_2", writable:false},
+                                        "key3":{"value":"Hello_3" , writable:true}})
+
+        console.log(obj)        //{key1: 'Hello_1', key2: 'Hello_2', key3: 'Hello_3'}  // here we added more than one properties
+
+        obj.key2 = "welcome_2";
+        obj.key3 = "welcome_3";
+
+        console.log(obj)        //{key1: 'Hello_1', key2: 'Hello_2', key3: 'welcome_3'} // here key3 updated bcz of writable:true and key2 not updated bcz writable:false.
+    </script> 
+-->
+<!-- 
+    <script>
+        let obj = {
+            "key1": "Hello_1",
+            123:"Hello_2",
+        };
+
+        console.log(obj.key1,obj[123]);         //Hello_1 Hello_2
+        //console.log(obj.123);       // it is invalid bcz of number we need to enhance it by keeping we array notaion we can solve it
+        console.log(obj[123])       //Hello_2
+    </script> 
+-->
+<!-- 
+    <script>
+        let obj = {
+            1:"Hello_1",
+            2:"Hello_2",
+            3:"Hello_3"
+        }
+        console.log(obj[1],obj[2],obj[3])   //Hello_1 Hello_2 Hello_3 
+        for(let key in obj){
+            console.log(obj[key])
+        }
+    </script>
+-->
+<!-- 
+    <script>
+        //let obj1 = { {} : "value_1", {} : "value_2" }  this structure is implemented as follows
+
+        let obj = {}    //key:value is required
+        let key1 = {}   // key
+        let value1 = "Hello_1";  // value
+
+        obj[key1] = value1;
+
+        let key2 = {}
+        let value2 = "Hello_2"
+         
+         obj[key2] = value2     // here old value overdding with the latest value.
+         console.log(obj)       //{[object Object]: 'Hello_2'}  // here we got the output as recent value of key2 
+    </script> 
+-->
+<!-- 
+    <script>
+        let obj = {
+            "key1":"Hello_1",
+            "key1":"Hello_2"
+        }
+        console.log(obj)        //      {key1: 'Hello_2'}     here also old value overriding with the latest value 
+    </script> 
+-->
+<!-- 
+    <script>
+        let obj = {
+            "key1":"Hello_1",
+            "key2":"Hello_1"
+        }
+        console.log(obj)        //{key1: 'Hello_1', key2: 'Hello_1'} here we can have duplicate values but not the keys
+    </script>
+-->
+<!--   
+  <script>
+        let obj = {
+            "key1":"value_1",
+            "key2":"value_2",
+            "key3":"value_3"
+        }
+        
+        console.log(obj.key1, obj.key2, obj.key3);      //value_1 value_2 value_3
+
+        console.log(obj["key1"], obj["key2"], obj["key3"])  //value_1 value_2 value_3
+
+        const { key1, key2, key3 } = obj;       // this process technically we can call de-structuring
+
+        console.log(key1,key2,key3);            // value_1 value_2 value_3
+
+        for (let key in obj ){
+            console.log(obj[key])       //value_1 value_2 value_3
+        }
+    </script>
+-->
+<!-- 
+    <script>
+        let my_funciton = {
+            "money":{ "amount":1000},
+            "gold": {"weight": "1gr"},
+            "book":{ "Author": "Kiranraj"},
+            "pen":{ "company":"ButterFlow"}
+        }
+
+        let { money , gold , book , pen} = my_funciton;
+
+        let { amount } = money ;
+        let { weight } = gold ;
+        let { Author } = book ;
+        let { company } = pen ;
+
+        console.log(amount,weight, Author, company)     //1000 '1gr' 'Kiranraj' 'ButterFlow'
+    </script> 
+-->
+<!-- 
+    <script>
+        let arr = [
+            {"emp_id":111, "emp_name":"e_one","e_sal":10000},
+            {"emp_id":222, "emp_name":"e_two","e_sal":20000},
+            {"emp_id":333, "emp_name":"e_three","e_sal":30000},
+            {"emp_id":444, "emp_name":"e_four","e_sal":40000},
+            {"emp_id":555, "emp_name":"e_five","e_sal":50000}
+        ] 
+
+        document.write(`
+        <table border = "10px"
+        cellpadding = "10px"
+        cellspacing = "10px"
+        align = "center" 
+        <tr>
+        <th>emp_id</th>,
+        <th>emp_name</th>,
+        <th>e_sal</th>,
+         
+        </tr> 
+        `)
+        arr.forEach((emprecord)=>{
+            document.write(`
+            <tr>
+            <td>${emprecord.emp_id}</td>
+            <td>${emprecord.emp_name}</td>
+            <td>${emprecord.e_sal}</td>   
+            </tr>
+            
+            `)
+        })
+    </script> 
+-->
+<!-- 
+    <script>
+        let products = [
+            { name:""},
+            {},
+            {},
+            {},
+            {},
+            {}
+        ] 
+    </script> 
+-->
+<!-- 
+    <script>
+        let obj = {
+            "key1":"Hello_1"
+        };
+        console.log(typeof obj);        // object
+
+        let str = JSON.stringify(obj);
+        console.log( typeof str)        //string
+    </script> 
+-->
+<!-- 
+    <script>
+        let obj = {'sub_one':'Angular13'}
+        console.log( typeof obj)             // object
+
+        let str = JSON.stringify(obj)
+        console.log(typeof str)                // string
+
+        let obj1 = JSON.parse(str);
+        console.log(typeof obj1)        //  object
+    </script> 
+-->
+<!-- 
+    <script>
+        let obj = { "key1":"Hello_1","key2":"Hello_2","key3":"Hello_3"};
+
+        console.log(obj.hasOwnProperty("key1"));        // true
+        console.log(obj.hasOwnProperty("key2"));        // true
+        console.log(obj.hasOwnProperty("key3"));        // true
+        console.log(obj.hasOwnProperty("key4"));        // false
+    </script> 
+-->
+
+<!-- 
+    <script>
+        let obj = { 
+            
+        };
+        // check object is empty or not
+        //(Object.keys(obj)).length == 0 ? console.log("empty"):console.log("Not empty")     //Not empty     // ['key1']
+        //(Object.values(obj)).length == 0 ? console.log("empty"):console.log("not empty")     //not empty
+
+        for(let key in obj){
+           if (obj.hasOwnProperty(key)){
+               console.log("Not Emplty")        //Not Emplty
+           }
+           else{
+               console.log("Empty")
+           }
+        } 
+    </script>
+ -->
+<!--     
+    <script>
+        let obj = {         // convert Json object to Array
+            "a":"b",
+            "c":"d",
+            "e":"f"
+        };
+        let arr = Object.entries(obj)
+
+        console.log(arr)
+    </script> 
+-->
+<!-- 
+    <script>
+        let obj1 = { "key1":"Hello_1"}
+        let obj2 = { "key2":"Hello_2"}
+        let obj3 = { "key3":"Hello_3"}
+
+        console.log( Object.assign(obj1,obj2,obj3))     //{key1: 'Hello_1', key2: 'Hello_2', key3: 'Hello_3'}
+    </script> 
+-->
+<!-- 
+    <script>
+        let arr = [ 100 , 200 , 300 , 400 ,500 ];  // >= 300
+
+        console.log(arr.filter((element,index)=>{
+            return element >= 300;      //[300, 400, 500]
+        }).map((element)=>{
+            return {"key":element}
+        })
+        )
+    </script> 
+-->
+
+    <script>
+        let arr = [ 
+            {price : 100},
+            {price : 200},
+            {price : 300},
+            {price : 400},
+            {price : 500}
+        ]
+    console.log(
+    arr.filter((element)=>{
+        return element.price >= 300 ;      //     0: {price: 300 } 1: {price: 400} 2: {price: 500}
+    })
+    );
+    </script>

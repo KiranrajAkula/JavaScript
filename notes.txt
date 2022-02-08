@@ -441,3 +441,452 @@ filter():-
 **********
 => inorder to apply the conditions here we need to use the filter function.
 
+
+
+
+
+reduce():
+*********
+=> reduce function is used to find the sum of elements or inder to perform addition of elements.
+
+reduceRight():-
+***************
+=> reduceRight function is used to find summation from right to left
+
+
+slice():
+********
+=> slice funtion will be used to get particular elements from the array.
+
+ syntax:-
+            var_name(arrays).slice(included_index, excluded_index)
+
+ex:
+    let arr1 = [10,20,30,40,50,60,70,80,90,100]
+
+        console.log(arr1.slice(4,6))   //[ 50, 60 ]  here the 4th position of element will be included and 6th position of element 
+                                    will be excluded
+
+splice() VS slice():
+=> splice is used to in order to remove or delete the partucular elements from an array,
+=> but here comes to slice it is used to in order to get or print particular element from an array
+
+
+flat():-
+*********
+=> flat funtion is used to inorder to convert the multi - dimentional array to single dimentional array     
+ex:-
+console.log(
+    [[10],[20],[30]].flat(1)  //[ 10, 20, 30 ] It is used inorder to convert mul-array to single-array
+    
+)
+
+findIndex():-
+***************
+=> findIndex function is used to know the index of elements in array
+
+
+indexOf():-
+***********
+=> index of function wont create indexes for repeated (duplicate) elements.
+=> while we print the duplicate and original indexes if the indexes un-match that cond is false means it won't print the value or 
+    wont return anything.
+
+
+copyWithin():-
+**************
+=> copyWithin function will shift the indexes 
+=> inoder to shift the indexes we need to go for copyWithin function.
+
+[10,20,30,40,50,60,70,80,90,100]
+
+copyWithin(4) // means the index of 4 is 50 then the element count is started from 5 onwords
+
+
+sort():-
+********
+=> to sort the elements eighter asending order or decending order then we need to go for sort function
+=> arg1 - arg2 is called ascending order.
+=> arg2 - arg1 is called decending order.
+
+
+
+==> in arrays inorder to know the whether the element is available or not in an array here we have two 
+apporaches 
+1)includes(): it is a type of boolean function.
+2)find(): it is a type of number function.
+
+includes():-
+************
+=> it will give an output in the form of boolean i.e true or false
+=> includes() function is used in order to check whether the require element is present(available) or not
+=> if the require element is available then is will return the output as true other wise false.
+
+ex:
+
+    let arr10 = [1,2,3,4,5,6];
+    console.log(arr10.includes(3)) //true
+    console.log(arr10.includes(10)) //false
+    
+find():-
+*********
+=> but here it will give the output in the form of number 
+=> here we have another apporach to know the availability of the element in an array that is find().
+=> find() is used to know the availability of the element 
+=> if it is available it returns the same element or searched element if not availabe it returns undefined.
+
+ex:-
+        let arr = [1,2,3,4,5,6,7,8];
+     console.log(arr.find((element,index)=>{
+        return element == 30;        //3 if it is present then it will return 3 other wise undefined
+     })
+     )
+
+
+trim():-
+*********
+=> tirm() function is used in order to remove the white spaces in any string
+=> it may be starting and ending.
+
+types of trim() funcitons:
+1) trimStart()
+2) trimEnd()
+
+ex:-
+     console.log(
+       " Kiranraj ".trim().length                                              // with spaces here the size is 10( Before the trim )  after the applying trim() function the length is 8 
+     )
+
+
+1) trimStart():-
+***************
+=> here in this trimStart the begining of the space will be removed.
+
+ex:-
+    console.log(
+         " kiranraj ".trimStart().length            // 9 is the output y bcz here starting of the space is removed not end
+     )
+
+2) tirmEnd():-
+**************
+=> here in this trimEnd the ending of the spaces will be 
+
+
+padStart():-
+***********
+=> if there are requied no of charcters are not available then we need to place to indicate not enough characters we 
+need to go for padStart
+=>in padStart indications of the symbol starts from the begining 
+
+console.log(
+         "kiranraj".padStart(15,"*")        //*******kiranraj
+     )
+padEnd():-
+**********
+=> in padEnd() indications of the symabol starts form the ending
+     console.log(
+         "kiranraj".padEnd(15,"*")          //kiranraj*******
+     )
+
+both padStart() and padEnd():-
+*****************************
+
+
+console.log(
+         "kiranraj".padStart(15,"&").padEnd(20,"*")    // &&&&&&&kiranraj*****
+     )
+
+=================================================================================
+
+Json:-
+*******
+=> Json stands for JavaScript Object Notation.
+=> Json also called as JavaScript Objects.
+=> we can exchange(frontend->bckend->serverdatabase visa-a-versa) the data in full stack application in two ways.
+    1)XML (it is heavy weith apporach that means it will take more Ram memory or it will create burdon on out Ram consumption)
+    2)JSON (it is light weigth apporach that means it will take less Ram memory or it won't create burdon on Ram memory)
+=> JSON data is suggested while tranfering the data.
+
+Syntax:-
+
+    Objects -----> { }
+    Arrays  -----> [ ]
+    data    -----> Key & value pairs
+                    key and value separated by using ":"
+                    pairs separated by using ","
+                    in order to access the data we need to use "." dot notaion.
+
+
+iteration of json objects:
+*************************
+=> Which is introduced at ES6.
+=> for of...loop can be defined as follows.
+    Syntax:-   
+            for (typeOf_variable var_name of object_name ){ }
+
+=> in order to get only keys we use one predefined obj that is "Object"  and here we hava one function "keys" then we 
+we need to supply object_name
+    ex:
+         Object.keys(obj)
+
+=> in order to get only values we use one predefined obj that is "Object"  and here we hava one function "values" then we 
+we need to supply object_name
+
+
+Deep Copy:
+**********
+=> Making xerox copy from Original copy technically we can call deep copy.
+=> which is implemented with help of "spread(...)" operator.
+
+Ex:
+    let original = {
+         "key1":"value_1"
+     }
+     let xerox = { ...original}         // deep copy
+
+     original.key1 = "Original Copy";
+     xerox.key1 = "Xerox Copy";
+
+     console.log(original)      //{key1: 'Original Copy'}
+     console.log(xerox)         //{key1: 'Xerox Copy'}
+
+=> inoder to delete the particular key here we used delete key word
+
+    Ex:
+        <script>
+    let obj1 = {
+        "key1":"value_1",
+        "key2":"value_2",
+        "key3":"value_3"
+    }
+
+    console.log(obj1)       //{key1: 'value_1', key2: 'value_2', key3: 'value_3'}
+    delete obj1.key1;
+    console.log(obj1)       //{key2: 'value_2', key3: 'value_3'}  here the key3 is deleted
+</script>
+
+
+Uses with spread operator(...):-
+*******************************
+=> deeo Copy(Cloning). here not effected to the xerox copy
+=> concatinating.  but here effected to the Xerox Copy also
+
+Ex:-
+    concatinating
+
+    <script>
+     let obj1 = {"key1": "value1"}
+     let obj2 = {"key2": "value2"}
+     let obj3 = {"key3": "value3"}
+     let obj4 = {...obj1,...obj2,...obj3}
+
+     console.log(obj4)      //{key1: 'value1', key2: 'value2', key3: 'value3'}  Concatenation with sperad operator
+ </script>
+
+ freeze():-
+ => freeze function is used to lock the object that means we can only read the data ofobjects of keys and values
+    and  also here deletion ,updation , adding.
+
+    freeze                                                      seal
+    "read" allowed                                        "read" allowed
+    write not allowed                                   write not allowed
+    update not allowed                                  "update" allowed
+    delete not allowed                                  not allowed
+
+
+defineProperty():-
+******************
+=> which is used to and one key and value(property) to the json object 
+=> in this at a time only we can add one key and value
+
+    Ex:-
+            <script>
+        let obj = {"key1":"hello_1"}
+
+        // add key2 ------ disable update and delete
+        // add key2 ------  enable update and delete
+
+        Object.defineProperty(obj,"key2",{value:"hello_2",writable:false});  
+
+
+        Object.defineProperty(obj,"key3",{value:"hello_3", writable:true});
+
+        console.log(obj)            //{key1: 'hello_1', key: 'hello_2', key3: 'hello_3'}
+
+        obj.key2 = "Welcome_2";
+        obj.key3 = "Welcome_3";
+
+        console.log(obj)            //{key1: 'hello_1', key2: 'hello_2', key3: 'Welcome_3'} // here key2 value not updated bcz of writable:false but key3 updated bcz of writable: true 
+
+
+        delete obj.key2;
+        delete obj.key3;
+
+        console.log(obj)       //{key1: 'hello_1', key2: 'hello_2', key3: 'Welcome_3'} // here nothing changes happend bcz we can able to read and update but we can't able to delete key values
+    </script>
+
+
+defineProperties():-
+********************
+=> defineProperties() is used to add more than one key and value(property) to the json obj.
+=> here we can add at a time more than one not like defineProperty()
+
+ways to accessing the data:
+ here we can access the data in 4 ways they are
+
+=> 1) Dot notation( " . ") :
+         here if want to access the key with a "stirng" then we need to go for "." dot notation.
+
+=> 2) Square notation([ ]):
+         here if want ot access the key with a "number" and "string" also then we need to go for "[ ]" Arrays notation.
+         here Square Notation( [] ) is the boss bcz it can handle number as well as string.
+=> 3) De-Structuring :-
+         here by structing we can access the data.
+=> 4) for.....in loop
+
+    Ex:-
+
+    <script>
+        let obj = {
+            "key1":"value_1",
+            "key2":"value_2",
+            "key3":"value_3"
+        }
+        
+        console.log(obj.key1, obj.key2, obj.key3);      //value_1 value_2 value_3
+
+        console.log(obj["key1"], obj["key2"], obj["key3"])  //value_1 value_2 value_3
+
+        const { key1, key2, key3 } = obj;       // this process technically we can call de-structuring
+
+        console.log(key1,key2,key3);            // value_1 value_2 value_3
+
+        for (let key in obj ){
+            console.log(obj[key])       //value_1 value_2 value_3
+        }
+    </script>
+
+
+   => In order to Convert the object to json here we have one predefined function.
+            1) JSON.stringfy() ---- obj  to  string
+            2) JSON.parse() ----- string to obj
+
+    Ex:-
+        <script>
+        let obj = {'sub_one':'Angular13'}
+        console.log( typeof obj)             // object
+
+        let str = JSON.stringify(obj)
+        console.log(typeof str)                // string
+
+        let obj1 = JSON.parse(str);
+        console.log(typeof obj1)        //  object
+    </script>
+
+   => In order to convert the string to json here we have one predefined funciton. 
+
+   => hasOwnProperty() function checks that whether the property is available or not.
+
+   Ex:-
+        <script>
+        let obj = { "key1":"Hello_1","key2":"Hello_2","key3":"Hello_3"};
+
+        console.log(obj.hasOwnProperty("key1"));        //true
+        </script>
+
+
+entries():-
+***********
+=> entries() function is used to convert Json to Array.
+
+    Ex:-
+        <script>
+            let obj = {         // convert Json object to Array
+            "a":"b",
+            "c":"d",
+            "e":"f"
+            };
+            let arr = Object.entries(obj)
+
+            console.log(arr)
+        </script>
+
+assign():-
+***********
+=> assign() is used to concatinate the key and values into one object.
+
+
+JSON Server:-
+**************
+=> Requesting the requesests such as post, get these kind of requesests technically we can call rest api's.
+=> or creating the url's technically we can call rest api's
+=> we can develop rest api's with the help of Json server.
+=> Ex:-  GET , POST , PUT , DELETE , ......
+=> json Server by default running on port number "3000". (port number is nothing but it is like a door name of a home)
+=> we will install JSON server by using folloing command.
+    > npm install -g json-server    // npm - node package manager
+                                    // -g global installation
+=> to know the version of JSON server 
+    >json-server --version
+=> we will load the data in JSON server by using folloing command.
+    > json-server --watch <name_file>.json
+=> we will test rest api's with "Postman".
+
+=>  http://localhost:3000/products
+
+=> what ever we got this url this url any body can use that means java people, .net people can use, Angular people can connect,
+    reactjs people can connect , vuejs people can conect, python people can connect ,testing people can connect.
+    so these kind of information we can call rest api's.
+
+=> POST: sending the data to the server we can call Post request(Sending).
+
+=> GET: Getting the data from the server we can call Get request(Getting).
+
+=> PUT: Updating the object data by Requesting the server we can call Put request(Updating).
+
+=> DELETE: Deleting the object data from the server we can call Delete request(Deleting).
+
+=> Particular Data of some thind we need to type that id
+    http://localhost:3000/employee/777
+
+=> searching Based on conditions here we taken name and e_sal.
+    http://localhost:3000/employee?name=e_one&e_sal=10000
+
+    http://localhost:3000/employee?id=555&e_sal=50000
+
+    http://localhost:3000/employee?_limit=4&_sort=e_sal&_order=desc
+
+=> to get limited no of records based on cond 
+    http://localhost:3000/employee?_limit=4
+
+=> to implement the slice operation we use like this
+    http://localhost:3000/employee?_start=1&_end=3
+
+    http://localhost:3000/employee?_start=1&_end=3&_sort=id&_order=desc
+
+=> In order to perform the order and sort below mentioned commands used.
+    http://localhost:3000/products?_sort=id&_order=desc 
+
+=> Official website for json server operations
+    https://www.npmjs.com/package/json-server
+
+=> Operators  _gte -- Greater than or equlto >=
+              _lte -- Less than or equal to <=
+
+=> greate than or equal to >= 
+    Ex: 
+        http://localhost:3000/employee?e_sal_gte=30000
+
+=> Less than or equal to <= 
+    Ex: 
+        http://localhost:3000/employee?e_sal_lte=30000
+
+=> if we dont want to include any record then we need to specify one cond
+    Ex:
+        http://localhost:3000/employee?id_ne=111
+
+        http://localhost:3000/employee?e_sal_ne=40000
+
+=> In json inoder to search we use "q" oprator is called searching operator.
+
+    http://localhost:3000/employee?q=10000
