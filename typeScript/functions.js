@@ -11,12 +11,11 @@
     }
      fun_one({"msg":"Hello_4"},{"msg":"Hello_5"},{"msg":"Hello_6"})     //Hello_4 Hello_5 Hello_6
  */
-
-     let netWorkCall = (successCallBack:any,errorCallBack:any):any =>{
-        console.log(successCallBack() , errorCallBack())    // spring boot integration soon... error
-     }
-        netWorkCall(()=>{
-            return "spring boot integration soon..."
-        }, ()=>{
-            return "error"
-        })
+var netWorkCall = function (successCallBack, errorCallBack) {
+    console.log(successCallBack(), errorCallBack());
+};
+netWorkCall(function () {
+    return "spring boot integration soon...";
+}, function () {
+    return "error";
+});

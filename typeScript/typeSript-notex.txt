@@ -66,3 +66,22 @@ Syntax:-
 => if we need to refer one variable to another variable then we need to follow follwing syntax.
     this syntax introduced in ES6 version.
     ${ variable_name }
+
+
+Function:-
+**********
+=> particular bussiness logic called as Function.
+=> functions are used to reuse the bussiness logic
+=> the funciton without name called as anonymous function.
+=> anonymous functions also calleda as arrow function.
+=> we will represent arrow function with "=>" symbole.
+=> this concept introduced in ES6 version.
+
+    Syntax:
+
+                // function defenition
+        var / let / const variable_name:datatype = (arg1:datatype, arg2:datatype, arg3:datatype, .... argn:datatype):returntype => {
+            // bussiness logic
+        } 
+          // call the function    or   function calling 
+          variable_name(parameter1,parameter2,parameter3, .... parametern)
