@@ -1,0 +1,68 @@
+TypeScript :
+************
+=>  TypeScript is the Programming Language.
+=>  TypeScript released by Microsoft.
+=>  TypeScript follows OOP's 
+        Ex-
+            inheritence
+            polymorphism
+            encapsulation
+            abstraction
+
+    TypeScript used to build the Angular, React, Node, Vuejs,.....
+
+    we will save the TypeScript files with ".ts" exention
+=> Visual Studio Code is suggestable IDE to Build the TypeScript Applicaitons.
+=> Visual Studio Code also called as VSCode 
+=> VSCode IDE given by Microsoft  and open source IDE.
+
+    Browsers                Browsers understand             Browsers Can't understand
+    1)chrome                Html                            TypeScript
+    2)mozilla               CSS
+    3)opera                 HTML5
+    4)netscape              CSS3
+    5)IE                    JAVASCRIPT  
+
+=> In General Browsers can't understand TypeScript.
+=> so,we need to convert TypeScript to Equalent JAVASCRIPT.
+=> conversion of TypeScript to Equalent javaScript called as transpilaion.
+=> "tsc" is the tool , used to perform the Transpilaion.
+
+Software Installations:
+***********************
+    >npm install -g typescript
+    -> npm present in nodeJS
+    -> npm stands for "node package manager"
+    -> "-g" stands for "global Installation"
+
+=> to know the version of the typescript we need to type the command
+    >tsc --version
+
+
+Variables:
+**********
+=> Variables are used to store the data.
+    Ex: 
+        string, number, boolean, objects , arrays,.......
+=> Variables we will declare with the help of var ,let and const keyword.
+=> let and const keywords introduced in "ES6" / "ES2015"
+=> variables should contain a-z , A-Z , 0-9 , $ and _
+=> variable shouldn't start with digits.
+
+
+Syntax:-
+********
+    let variable_name : datatype = value; 
+
+    Ex:-
+        let msg = "Wellcome to typescript"
+
+        console.log(msg);
+
+=> String will be represented following ways
+    "", '' , and , `` (this backtick operator introduced in ES6 and it is used to define the multiline strings)
+    backtick operator also called as "template" literal.
+
+=> if we need to refer one variable to another variable then we need to follow follwing syntax.
+    this syntax introduced in ES6 version.
+    ${ variable_name }

@@ -59,6 +59,8 @@ Variables:-
 =>"let" and "const" keywords introduced in ES6
 => variables should contain a-z,A-Z, 0-9, $,_
 => variables should not start with digits
+=> we need to define one rule or cond to implement the var to check whether they or declared or not.
+        i.e "use strict" this key word we need to use in ES6 may be
     syntax:-
             var/let/const variable_name = value;
 
@@ -890,3 +892,135 @@ JSON Server:-
 => In json inoder to search we use "q" oprator is called searching operator.
 
     http://localhost:3000/employee?q=10000
+
+
+Data Structures:-
+****************
+=> in json objects, if we use "json objects as keys" automatically overrding will be happening.
+=> to overcome above issue , Netscape released the data structures. 
+    they are 
+    1) Map
+    2) WeakMap
+    3) Set 
+    4) WeakSet
+
+
+    Ex:-
+
+        <script>
+            let obj = {};
+
+            let key1 = {};
+            let value1 = "value_1"
+
+            let key2 = {};
+            let value2 = "value_2";
+
+            obj[key1] = "value_1"
+            obj[key2] = "value_2"
+            console.log(obj)      //{[object Object]: 'value_2'}        // here we passed two key&value pairs but we are getting only one that is value_2
+                                                                // so here we have draw back bcz of this reason net scape comp introduced to overcome this 
+                                                                //problem we need a datastructures concepts. 
+
+        </script>
+
+=> creating obj to the datastructure
+
+     let map = new Map();
+
+=> in order to know the api's of the map object we need to use dir() function.
+    let map = new Map();
+        console.dir(map)
+
+    1) Clear(): to clear the all the key and value pairs of the map obj.
+
+    2) Map(): consturctor is used to create the object to the Map().
+
+    3) delete(): in order to delete key and value pair from map object.
+
+    4) entries() , forEach() , for...of() : in order to iterate map object then we need to go for these iterations.
+
+    5) get(): is used to get in data from the map object.
+
+    6) has(): in order to check whether the key present or not 
+
+    7) keys(): we can get all the keys by using keys() map.
+
+    8) set(): in order to add the data to the object we need to use set() function.
+
+    9) size(): in order to know the size of the map we need to use size() function.
+
+    10) values(): in order to get all values from the map we need to use values() function.
+
+WeakMap():
+**********
+=> WeakMap() is used to overcome the loophole of the Map() but the result of the prog vary from chrome to online editor.
+    
+    Ex:- 
+        {
+            let x = "key1";
+
+            var map = new Map();
+
+            map.set(x , "Hello_1" );
+        }
+            console.log(map)
+                                => here we got out put as { 'key1' => 'Hello_1' } with Map() function.
+                                => here we got an error with WeakMap if we place instead of Map() function.
+
+=> In WeakMap() keys should be in json format
+=> apart from the json object it wont allow other things
+
+    Ex:- 
+         <script>
+        let weakmap = new WeakMap();            // In WeakMap() keys should be in json format
+                                                // apart from the json object it wont allow other things
+         weakmap.set({},"value")
+         console.log(weakmap)       //{{…} => 'value'}
+    </script>
+
+Set():-
+*******
+=> which also like a WeakMap() 
+=> to know the functions of set() we need to type following thing
+        let set = new Set();
+        console.dir(set)
+
+
+Spread VS Rest :-
+*****************
+=> based on the situation people will call Rest parameter and Spread Operator which are introduced at ES6 version
+=> it is like a single person two names 
+=> if we use "..." opeator for merging (Concatenation) purpose then we can call Spread Operator.
+    below shown two secnarios this "..." opeator called Spread Operator.
+    Ex:-
+        <script>
+            let arr1 = [1,2,3];
+            let arr2 = [4,5,6];
+
+            let arr3 = [...arr1 , ...arr2]
+
+            console.log(arr3)   //[1 2 3 4 5 6 ]
+        </script>
+
+    Ex:-
+        <script>
+            let obj1 = {
+                "name":"kiranIT",
+                "Sub": "Angular",
+                "cost":7000
+            }
+            let obj2 = {
+                ...obj1,
+                "Sub":"Java",
+                                    // here instead of writing same data(repeated data) i.e name and cost we need to place the rest operator
+            
+            }
+            console.log(obj1)       //{name: 'kiranIT', Sub: 'Angular', cost: 7000}
+            console.log(obj2)       //{name: 'kiranIT', Sub: 'Java', cost: 7000}
+        </script>
+
+Rest Parameter:-
+****************
+=> if we use "..." with the function as parameter then we can called Rest Parameter.
+
