@@ -1,0 +1,38 @@
+
+<h1 id="my_res"></h1>
+<script>
+    const xhr = new XMLHttpRequest();
+
+    
+
+    xhr.onreadystatechange = function(){ //onreadystatechange() this a event      // when the change detected in the number then  this function will execute. 
+        switch(xhr.readyState){
+            case 0 :
+                    console.log("reuest unsent");
+                    break;
+            case 1 :
+                    console.log("loading starts");
+                    break;
+            case 2 :
+                    console.log("interactive with external file");
+                    break;
+            case 3 :
+                    console.log("loaded successfully");
+                    break;
+            case 4 :
+                if(xhr.status == 200){      // 200 - means success 404 - means client side error
+                    document.getElementById("my_res").textContent = xhr.responseText;
+                }
+                if(xhr.status == 404){
+                    console.log("file / resource are not found")
+                }
+        }
+    }
+        xhr.open("get","demo.txt",true)  // get is used to read the data and which file we need to read and next we need asynchronous calls or not
+        xhr.send() // send() In order to execute the request we need to use send() function then automatically asychronous call will executed 
+    //0 - request unsent
+    //1 - loading starts            // here the script code starts loading into browser engine 
+    //2 - external files or browser interactive with external file( interactive state)
+    //3 - loaded (html file loaded into browser successfully)  
+    //4 - request sent successfully
+</script>

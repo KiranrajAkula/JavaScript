@@ -1,0 +1,57 @@
+<!-- 
+    <script>
+        console.log("123abc123defg1234".match(/[0-9]/))  //['1', index: 0, input: '123abc123defg1234', groups: undefined]        // here we checking whether it contain numbers or not
+
+        console.log("abcdefg".match(/[0-9]/))       // null here we got null as a output bcz not present reqired number but above one returned array bcz of present
+    </script> 
+-->
+<!-- 
+    <script>
+        console.log(
+            "123asdf123sdf".match(/^[0-9a-zA-Z]+$/)     //['123asdf123sdf', index: 0, input: '123asdf123sdf', groups: undefined] 
+        
+            )
+
+            console.log(
+            "123asdf123sd_&f".match(/^[0-9a-zA-Z]+$/)    // null
+        
+            )
+    </script> 
+-->
+<!-- 
+    <script>
+     console.log( "111 111 1111".match(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/)) 
+                                                                                        //['111 111 1111', '111', '111', '1111', index: 0, input: '111 111 1111', groups: undefined]
+     console.log( "111-111-1111".match(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/))
+                                                                                        //['111-111-1111', '111', '111', '1111', index: 0, input: '111-111-1111', groups: undefined]
+     console.log( "111.111.1111".match(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/))
+                                                                                        //['111.111.1111', '111', '111', '1111', index: 0, input: '111.111.1111', groups: undefined]
+     console.log( "111*111*1111".match(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/))
+                                                                                        // null
+     console.log( "111*111*1111".match(/^\(?([0-9]{3})\)?[-. *]?([0-9]{3})[-. *]?([0-9]{4})$/))
+                                                                                        //(4) ['111*111*1111', '111', '111', '1111', index: 0, input: '111*111*1111', groups: undefined]
+    
+
+    </script> 
+-->
+<!--    
+   <script>
+       console.log( "Kiranraj796@gmail.com".match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/))
+                                //['Kiranraj796@gmail.com', undefined, undefined, '.com', index: 0, input: 'Kiranraj796@gmail.com', groups: undefined]
+       console.log( "Kiranraj796gmail.com".match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/))
+                                // null
+    </script> 
+-->
+
+    <script>
+        console.log(
+            "341111111111111".match(/^(?:3[47][0-9]{13})$/) //['341111111111111', index: 0, input: '341111111111111', groups: undefined]
+        )
+        console.log(
+            "371111111111111".match(/^(?:3[47][0-9]{13})$/) //['371111111111111', index: 0, input: '371111111111111', groups: undefined]
+        )
+        console.log(
+            "361111111111111".match(/^(?:3[47][0-9]{13})$/) // null
+        )
+        
+    </script>

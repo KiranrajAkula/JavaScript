@@ -1,17 +1,17 @@
-1)variables
-2)functions
-3)Arrays//important for interviews
-4)Json//important for interviews
-5)Promises
-6)DOM manipulations//important for interviews
-7)CallBacks//important for interviews
-8) Event Handlings
-9)Event Bubblings & event capturing
-10)Deboucing
-11)Throttling
-12)AJAX calls
-13)Regular Expressions
-14)
+1)  variables                             // completed
+2)  functions                             // completed
+3)  Arrays//important for interviews      // completed
+4)  Json//important for interviews        // completed
+5)  Promises  
+6)  DOM manipulations//important for interviews
+7)  CallBacks//important for interviews    // completed
+8)  Event Handlings
+9)  Event Bubblings & event capturing
+10  )Deboucing
+11  )Throttling
+12) AJAX calls                              // completed
+13) Regular Expressions                     // completed
+
 
 
 Introduciton
@@ -1023,4 +1023,58 @@ Spread VS Rest :-
 Rest Parameter:-
 ****************
 => if we use "..." with the function as parameter then we can called Rest Parameter.
+
+Regular Expressions:-
+********************
+=> if the given string if we want to know whether it contain numbers or not then we need to go for
+    Regular Expressions.
+=> while we print the string with match() function if they numbers are present it will give the output 
+   as an array other wise it will give undefined.
+=> match() function is used to apply the validations.
+
+Website for form Validations:-
+******************************
+https://www.w3resource.com/javascript/form/javascript-sample-registration-form-validation.php 
+
+
+AJAX calls:
+***********
+synchronous calls:-
+*****************
+=> if the client one request completed successfully then only client two can request visa-a-versa.
+=> here not possible to request to the server at a time.
+asynchronous calls:-
+******************
+=> if the n no of clients requests to the server at a time then we can call asynchronous calls.
+=> if one client accessing the server may not effect to the accessing  of other client.
+=> Execution of network calls parllelly is called asynchronous calls.
+=> asynchronous calls also called as AJAX calls  
+
+JavaScript:-
+***********
+XMLHTTPREQUEST: it is used to  make the asynchronous calls in javascript.
+
+Jquery:-
+*******
+$.AJAX(): AJAX function is used to make asynchronous calls in Jquery
+
+Angular:-
+*********
+HttpClient: In Angular HttpClient is used to make the asynchronous calls.
+
+ReactJs:-
+*********
+AXIOS: AXIOS library is used to make the asynchronous calls in ReactJs.
+
+VueJs:-
+******
+HTTP: is used to make the asynchronous calls in Vuejs.
+
+
+Server Response contain 5 types of codes:
+1XX -  INFORMATION RELATED
+2XX -  SUCCSS
+3XX -  RE-DIRECT
+4XX -  CLIENT SIDE ERROR
+5XX -  SERVER SIDE ERROR
 
