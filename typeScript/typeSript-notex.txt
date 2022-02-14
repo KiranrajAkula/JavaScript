@@ -85,3 +85,166 @@ Function:-
         } 
           // call the function    or   function calling 
           variable_name(parameter1,parameter2,parameter3, .... parametern)
+
+
+=> if at all if we declared any thing as void that means that funciton won't return anything that means it won't contain the arguments
+=> if at all if we have only one statement then curly brackets are optional. 
+
+    Ex:-
+         let fun_one = (): void => console.log("This statement is with out braces")   //This statement is with out braces    
+                        // if we have only one statement no need to keep curly brackets
+    fun_one()
+
+
+=> We can know the type of datatype by using 
+        typeof "angular"
+=> here we have another way also to know the type datatype
+        toString.call("angular")
+
+
+Classes:
+********
+=> collection of variables and functions called as Classes
+=> we define the classes by using "class" keyword. 
+=> we will create object to the class by using "new" keyword.
+=> we have following modifiers
+    1) public
+    2) private
+    3) Protected
+            * recomonded modifier for variable is "private"
+            * recomonded modifier for functions is "public"
+=> we will define constructor by using "constructor" class.
+=> "this" keyword used to refer the current class members.
+=> if we forgot fo place the modifier then default modifier is public.
+
+
+inheritence:-
+************
+=> getting the data from parent class to child class called as inheritence.
+=> we will implement the inheritence with help of "extends" keyword.
+   types of inheritence
+        1) single level inheritence
+        2) multi level inheritence
+        3) multiple inheritence
+        4) hirarichal inheritence
+        5) hybrid inheritence
+
+1) single level inheritence:-
+    => one parent and one child 
+
+2) multi level inheritence:-
+    => One parent , one child  subchild and grandsubchild....
+
+3) multiple inheritence:-
+    => two parents or multiple or morethan one and one child
+
+4) Heirarchical inheritence:-
+    => one parent and multiple or morethan one childrens
+
+5) hybrid inheritence:-
+    => combination of Heirarchical + Multiple 
+
+
+
+Interfaces:-
+***********
+=> when ever we know the "declarations", but we don't know "implementations" then we will choose Interfaces.
+=> we will declare interfaces by using "interface" keyword.
+=> implementations provided by either "classes" or "son".
+=> Multiple inheritence supported in Interface concept but not in type script class concept.
+
+Modifiers:-
+*********
+=> typescript support Three modifiers
+    1) public
+    2) private
+    3) protected 
+
+Public:-
+******** 
+=> Public modifier applicable to "variables" , "functions" and "Constructor".
+=> public modifier not applicable to "classes" or "class" level.
+=> public members by default available to "child" classes.
+=> we can access "public" members by using class "objects".
+
+Private:-
+********
+=> private modifier not applicable to "class".
+=> private modifier applicable to "variables" , "functions" and "constructor" also.
+=> if the constructor is private we can't create object to that private constructor.
+=> we can access private members with in the class by using "this" keyword.
+=> we can't access private member by using class objects.
+=> private members won't accessable to child classes.
+
+protected:-
+**********
+=> protected key word not applicable to class level.
+=> protected modifier applicable to variables , functions and constructor also.
+=> we can't protected members by using  class objects.
+
+Super:-
+*******
+=> child class will call the parent class members with the help of super keyword.
+=> child class will call the parent class constructor and functios also.
+
+Static:-
+********
+=> we can access static members directly by "class" names.
+=> we can't access static members by "class" objects.
+=> we can't initialize static members by "constructor".
+
+readonly keyword:-
+******************
+=> we can olny read the data.
+=> we can't modify  the data.
+
+
+Modules and Project:-
+********************
+=> collection of modules is known as Project.
+=> if we want to use variables , classes , interfaces etc into another file
+    we used export keyword in order to export all into another file by using import keyword
+=> here export by defaultly it will export data in the form of objects 
+=> if we dont want in the form of obj here we need to declare after the export keyword "default" 
+    keyword will be declared. (here default means as it as )
+=> here the execution of the module alos little bit different that means
+    >tsc --module commonjs printed_file.ts
+                here commonjs is library which is used in order to execute modules in typescript
+
+namespaces:-
+***********
+=> packages: logically grouping of similar functionality's we can called as packages.
+=> namespaces: logically grouping of similar functionality's we can called as namespaces.
+=> when comes to typescript here packages called as namespaces.
+=> we can declare name space with the help of one keyword that is "namespace"
+=> here we need to export variable to access or import we need to type "ref" it will give one ref path need to type 
+=> here in order to compile we need to use on flag that is "--outFile"
+   and need to ask convert file2.ts to file2.js
+   >tsc --outFile file2.js file2.ts
+   >node file2.js
+
+   Ex:-
+    file1.ts
+    ********
+        namespace Transactions{
+    export let acc_bal:number = 100000;
+    export let credit_limit:number = 50000;
+    export let debit:number = 50000;
+
+    file2.ts
+    ********
+    ///<reference path="file1.ts" />
+    console.log(
+    Transactions.acc_bal,
+    Transactions.credit_limit,
+    Transactions.debit
+                )
+
+}
+1) Account.js 
+2) Debit.js             // these three folder(files) as related to transactions here we can call transaction namespace or package
+3) Credit.js
+
+1) Gold.js
+2) Siler.js             // these three folder(files) are related to some ornaments here can call ornament namespace or package.
+3) Platinum.js
