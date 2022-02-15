@@ -248,3 +248,8 @@ namespaces:-
 1) Gold.js
 2) Siler.js             // these three folder(files) are related to some ornaments here can call ornament namespace or package.
 3) Platinum.js
+
+
+Generics:-
+**********
+=> if we want to decide datatype dynamically(at the runtime) not begining of the application then we need to go for generics concept.
